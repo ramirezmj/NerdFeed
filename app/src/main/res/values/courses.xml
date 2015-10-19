@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="courses">
+        <item>Advanced iOS Bootcamp</item>
+        <item>Beginning iOS (iPhone/iPad) with Swift</item>
+        <item>iOS with Swift for the Enterprise Bootcamp</item>
+        <item>OpenGL ES Bootcamp</item>
+        <item>iOS Bootcamp - Fast Track with Swift</item>
+        <item>Advanced Android</item>
+        <item>Android Fundamentals</item>
+        <item>Beginning Android with Java</item>
+        <item>Ruby on the Server</item>
+        <item>Front-End Development Bootcamp</item>
+        <item>iOS Mobile Design with Sketch</item>
+    </string-array>
+</resources>

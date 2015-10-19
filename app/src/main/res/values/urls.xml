@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="urls">
+        <item>https://training.bignerdranch.com/classes/advanced-ios-bootcamp</item>
+        <item>https://training.bignerdranch.com/classes/beginning-ios-iphone-ipad-with-swift</item>
+        <item>https://training.bignerdranch.com/classes/ios-with-swift-for-the-enterprise-bootcamp</item>
+        <item>https://training.bignerdranch.com/classes/opengl-es-bootcamp</item>
+        <item>https://training.bignerdranch.com/classes/ios-bootcamp-fast-track-with-swift</item>
+        <item>https://training.bignerdranch.com/classes/advanced-android</item>
+        <item>https://training.bignerdranch.com/classes/android-fundamentals-866c8d3e-a142-46fd-94c1-d010fa0146d2</item>
+        <item>https://training.bignerdranch.com/classes/beginning-android-with-java</item>
+        <item>https://training.bignerdranch.com/classes/ruby-on-the-server</item>
+        <item>https://training.bignerdranch.com/classes/front-end-development-bootcamp</item>
+        <item>https://training.bignerdranch.com/classes/ios-mobile-design-with-sketch</item>
+    </string-array>
+</resources>
