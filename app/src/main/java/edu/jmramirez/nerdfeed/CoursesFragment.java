@@ -19,6 +19,7 @@ import android.widget.ListView;
 public class CoursesFragment extends Fragment {
 
     Activity parentActivity;
+    String[] urlsArray;
 
     public CoursesFragment() {
         // Required empty public constructor
@@ -40,6 +41,8 @@ public class CoursesFragment extends Fragment {
 
         // Reference to the courses list ListView
         ListView coursesListView = (ListView) parentActivity.findViewById(R.id.coursesListView);
+        urlsArray = getResources().getStringArray(R.array.urls);
+
 
         // ArrayAdapter with the list of courses
         ArrayAdapter<CharSequence> coursesAdapter = ArrayAdapter
@@ -49,8 +52,8 @@ public class CoursesFragment extends Fragment {
         coursesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(parentActivity, CoursesWebViewFragment.class);
-                intent.putExtra("url", "www.google.es");
+                Intent intent = new Intent(parentActivity, WebViewActivity.class);
+                intent.putExtra("url", urlsArray[position]);
                 startActivity(intent);
             }
         });

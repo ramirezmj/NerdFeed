@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class CoursesWebViewFragment extends Fragment {
 
     Activity parentActivity;
+    String url;
 
     public CoursesWebViewFragment() {
         // Required empty public constructor
@@ -36,9 +37,14 @@ public class CoursesWebViewFragment extends Fragment {
 
         parentActivity = getActivity();
 
-        WebView coursesWebView = (WebView) parentActivity.findViewById(R.id.coursesWebView);
+        url = parentActivity.getIntent().getStringExtra("url");
 
-        String url = "http://www.google.es";
+        if (url == null || url.length() == 0) {
+            url = "www.apple.com";
+        }
+
+
+        WebView coursesWebView = (WebView) parentActivity.findViewById(R.id.coursesWebView);
 
         if(coursesWebView != null){
             coursesWebView.loadUrl(url);

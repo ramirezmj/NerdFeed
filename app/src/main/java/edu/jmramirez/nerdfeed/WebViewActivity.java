@@ -5,12 +5,9 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
-
-public class MainActivity extends Activity {
-
+public class WebViewActivity extends Activity {
 
     FragmentManager fragmentManager;
-    CoursesFragment coursesFragment = new CoursesFragment();
     CoursesWebViewFragment coursesWebViewFragment = new CoursesWebViewFragment();
 
     @Override
@@ -25,11 +22,9 @@ public class MainActivity extends Activity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
         // Add the CoursesFragment to the layout
-        transaction.add(R.id.fragment_container, coursesFragment);
-//        transaction.add(R.id.fragment_container, coursesWebViewFragment);
+        transaction.add(R.id.fragment_container, coursesWebViewFragment);
 
         // Commit the FragmentTransaction
         transaction.commit();
     }
-
 }
