@@ -12,11 +12,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CoursesFragment extends Fragment {
+
+    OnCourseItemSelectedListener mCallback;
+
+    public interface OnCourseItemSelectedListener {
+        public void OnCourSeItemSelected(int position, String url);
+    }
 
     Activity parentActivity;
     String[] urlsArray;
@@ -30,6 +32,20 @@ public class CoursesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_courses, container, false);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception.
+        try {
+            mCallback = (OnCourseItemSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnCourseItemSelected");
+        }
     }
 
     @Override
@@ -52,9 +68,8 @@ public class CoursesFragment extends Fragment {
         coursesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(parentActivity, WebViewActivity.class);
-                intent.putExtra("url", urlsArray[position]);
-                startActivity(intent);
+
+                mCallback.OnCourSeItemSelected(position, urlsArray[position]);
             }
         });
     }

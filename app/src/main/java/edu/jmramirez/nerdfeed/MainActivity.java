@@ -3,10 +3,13 @@ package edu.jmramirez.nerdfeed;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity
+        implements CoursesFragment.OnCourseItemSelectedListener {
 
 
     FragmentManager fragmentManager;
@@ -26,10 +29,27 @@ public class MainActivity extends Activity {
 
         // Add the CoursesFragment to the layout
         transaction.add(R.id.fragment_container, coursesFragment);
-//        transaction.add(R.id.fragment_container, coursesWebViewFragment);
+
+        if (findViewById(R.id.fragment_detail) != null) {
+            transaction.add(R.id.fragment_detail, coursesWebViewFragment);
+        }
 
         // Commit the FragmentTransaction
         transaction.commit();
     }
 
+
+    @Override
+    public void OnCourSeItemSelected(int position, String url) {
+
+        if (findViewById(R.id.fragment_detail) != null) {
+
+            coursesWebViewFragment.updateURL(url);
+        } else {
+
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+            intent.putExtra("url", url);
+            startActivity(intent);
+        }
+    }
 }
