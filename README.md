@@ -1,2 +1,2 @@
 # NerdFeed
-App to check bignerdranch's online courses
+Android app to check bignerdranch's online courses
